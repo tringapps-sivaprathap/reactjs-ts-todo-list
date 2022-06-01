@@ -2,7 +2,11 @@ import { useDispatch } from 'react-redux'
 import { taskDeleted, taskCompleted, taskEdited, taskSaved } from '../features/taskSlice'
 import { useState } from "react"
 
-const Task = ({ task }) => {
+type taskType = {
+  task: {id: string, name: string, status?: boolean, edit?: boolean}
+}
+
+const Task = ({ task }: taskType) => {
   const [editedTask, setEditedTask] = useState(task.name)
   const dispatch = useDispatch()
 
@@ -29,7 +33,12 @@ const Task = ({ task }) => {
 
       {task.edit ? (
         <button
-          onClick={() => dispatch(taskSaved({oldTask: task.id, newTask: editedTask}))}
+          onClick={() => {
+            if(editedTask.trim() === '' || editedTask.trim() === ' ')
+              alert("task can't be empty")
+            else
+              dispatch(taskSaved({oldTask: task.id, newTask: editedTask}))
+          }}
           className={task.status === true ? 'disabled-button' : 'save-button'}
           disabled={task.status === true ? true : false}
         >Save</button>

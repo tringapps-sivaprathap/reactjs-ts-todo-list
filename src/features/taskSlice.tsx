@@ -1,7 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
-  tasks: JSON.parse(localStorage.getItem('tasks')) || []
+type initialStateType =  {
+  tasks: {id: string, name: string, status?: boolean, edit?: boolean}[]
+}
+
+const initialState: initialStateType = {
+  tasks: JSON.parse(localStorage.getItem('tasks') || '[]')
 }
 
 const taskSlice = createSlice({

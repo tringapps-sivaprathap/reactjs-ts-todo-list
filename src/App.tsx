@@ -3,8 +3,13 @@ import AddTask from "./components/AddTask"
 import { useEffect } from "react"
 import { useSelector } from 'react-redux'
 
+type tasksType = {id: string, name: string, status?: boolean, edit?: boolean}[]
+type stateType = {
+  task: {tasks: tasksType},
+  tasks: tasksType
+}
 const App = () => {
-  const tasks = useSelector((state) => state.task.tasks)
+  const tasks = useSelector((state: stateType) => state.task.tasks)
 
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks))

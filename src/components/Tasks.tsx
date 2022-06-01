@@ -1,10 +1,16 @@
 import { useSelector } from 'react-redux'
 import Task from "./Task";
 
+type tasksType = {id: string, name: string, status?: boolean, edit?: boolean}[]
+type stateType = {
+  task: {tasks: tasksType},
+  tasks: tasksType
+}
+
 const Tasks = () => {
-  const tasks = useSelector((state) => state.task.tasks)
+  const tasks = useSelector((state: stateType) => state.task.tasks)
   const completeCount = () => {
-    let count = 0
+    let count: number = 0
     tasks.forEach((task) => task.status === true && count++)
     return count
   }
