@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.header {
+  background-color: #FBE45B;
+  color: #1B4D89;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 !important;
+  padding: 1rem;
+}
+
+.add-task-container {
+  margin: 2rem;
+}
+
+.add-task-container input {
+  height: 100%;
+  padding: .3rem;
+  outline: none;
+  font-size: 1.2rem;
+  border: 2px solid #0D0D0D;
+  border-right: 0;
+}
+
+.add-task-container button {
+  height: 100%;
+  padding: .3rem;
+  font-size: 1.2rem;
+  border: 2px solid #0D0D0D;
+  background-color: #0D0D0D;
+  color: white;
+}
+
+/* tasks component */
+.tasks-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.task-container {
+  margin: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-container > * {
+  margin: 0 .5rem;
+}
+
+.task-container span {
+  font-size: 1.5rem;
+  width: 15vw;
+  word-wrap: break-word;
+}
+
+.task-container input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+}
+
+.task-container input[type=text] {
+  height: 100%;
+  width: 15vw;
+  padding: .3rem;
+  font-size: 1.1rem;
+  outline: none;
+  border: 2px solid #1B4D89;
+}
+
+.task-container button {
+  height: 100%;
+  padding: .2rem;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.count-container {
+  margin: 1rem;
+}
+
+.count-container p {
+  font-size: 1.5rem;
+}
+
+.no-task {
+  padding: .5rem;
+}
+
+.no-task p {
+  font-size: 1.5rem;
+}
+
+.completed-task {
+  text-decoration: line-through;
+}
+
+.delete-button {
+  border: 2px solid rgb(255, 60, 60);
+  background-color: rgb(255, 60, 60);
+}
+
+.edit-button {
+  border: 2px solid #1B4D89;
+  background-color: #1B4D89;
+}
+
+.save-button {
+  border: 2px solid rgb(10, 160, 10);
+  background-color: rgb(10, 160, 10);
+}
+
+.disabled-button {
+  border: 2px solid gray;
+  background-color: gray;
+}
